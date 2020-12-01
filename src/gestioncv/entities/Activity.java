@@ -14,26 +14,20 @@ import javax.persistence.Table;
 @NamedQuery(name = "trouver les activités", query = "select a from Activity a")
 public class Activity implements Serializable {
 	private static final long serialVersionUID = 1L;
+	
 	@Id
 	@GeneratedValue
 	@Column(name = "id")
 	private Long id;
+	
+	@Column
 	private String title;
 
 	@Column
 	private Integer year;
 
 	@Column
-	private String experiencePro;
-
-	@Column
-	private String formation;
-
-	@Column
-	private String project;
-
-	@Column
-	private String other;
+	private ActivityNature nature;
 
 	@Column
 	private String description;
@@ -68,37 +62,13 @@ public class Activity implements Serializable {
 	public void setYear(Integer year) {
 		this.year = year;
 	}
-
-	public String getExperiencePro() {
-		return experiencePro;
+	
+	public ActivityNature getNature() {
+		return nature;
 	}
 
-	public void setExperiencePro(String experiencePro) {
-		this.experiencePro = experiencePro;
-	}
-
-	public String getFormation() {
-		return formation;
-	}
-
-	public void setFormation(String formation) {
-		this.formation = formation;
-	}
-
-	public String getProject() {
-		return project;
-	}
-
-	public void setProject(String project) {
-		this.project = project;
-	}
-
-	public String getOther() {
-		return other;
-	}
-
-	public void setOther(String other) {
-		this.other = other;
+	public void setNature(ActivityNature nature) {
+		this.nature = nature;
 	}
 
 	public String getDescription() {
