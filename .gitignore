@@ -9,3 +9,6 @@ target/
 # VS Code
 .vscode/*
 .history/
+
+# Faces
+.metadata/

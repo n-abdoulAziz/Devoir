@@ -1,4 +1,4 @@
-package mayapp1.entites;
+package gestioncv.entities;
 
 import java.io.Serializable;
 
@@ -11,8 +11,8 @@ import javax.persistence.NamedQuery;
 import javax.persistence.Table;
 @Entity
 @Table(name="Personne")
-@NamedQuery(name="trouver les CurriculumVitaeCV",query="select cv from CurriculumVitaeCV cv")
-public class CurriculumVitaeCV implements Serializable{
+@NamedQuery(name="trouver les activités",query="select cv from Activity cv")
+public class Activity implements Serializable{
 	private static final long serialVersionUID = 1L;
 	@Id
 	@GeneratedValue
@@ -112,7 +112,7 @@ public class CurriculumVitaeCV implements Serializable{
 		this.adressweb = adressweb;
 	}
 
-	public CurriculumVitaeCV() {
+	public Activity() {
 		super();
 		// TODO Auto-generated constructor stub
 	}

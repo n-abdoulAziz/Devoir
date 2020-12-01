@@ -1,4 +1,4 @@
-package mayapp1.beans;
+package gestioncv.beans;
 
 import java.util.List;
 
@@ -8,22 +8,22 @@ import javax.ejb.TransactionManagementType;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 
-import mayapp1.entites.CurriculumVitaeCV;
+import gestioncv.entities.Activity;
 
 @Stateless(name = "CurriculumVitaCVBean", description = "EJB pour accèder aux  cv")
 @TransactionManagement(TransactionManagementType.CONTAINER)
-public class CurriculumVitaCVBean {
+public class ActivityBean {
 	@PersistenceContext(unitName= "MyDataSource")
 	EntityManager em;
 	
-	public CurriculumVitaeCV findCV(Long n) {
-		return em.find(CurriculumVitaeCV.class, n);
+	public Activity findCV(Long n) {
+		return em.find(Activity.class, n);
 	}
 
 	
-	public List<CurriculumVitaeCV> findAllCv() {
+	public List<Activity> findAllCv() {
 		// TODO Auto-generated method stub
-		 return em.createQuery("Select cv From CurriculumVitae cv", CurriculumVitaeCV.class)
+		 return em.createQuery("Select cv From CurriculumVitae cv", Activity.class)
 			          .getResultList();
 	}
 }

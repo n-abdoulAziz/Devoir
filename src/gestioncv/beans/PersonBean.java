@@ -1,4 +1,4 @@
-package mayapp1.beans;
+package gestioncv.beans;
 
 import java.util.List;
 
@@ -9,8 +9,7 @@ import javax.ejb.TransactionManagementType;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 
-
-import mayapp1.entites.Person;
+import gestioncv.entities.Person;
 
 @Stateless(name = "PersonBean", description = "EJB pour accèder aux  persones")
 @TransactionManagement(TransactionManagementType.CONTAINER)

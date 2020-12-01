@@ -1,4 +1,4 @@
-package mayapp1.entites;
+package gestioncv.entities;
 
 import java.io.Serializable;
 
