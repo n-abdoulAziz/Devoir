@@ -1,19 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
 <resources>
-
-	<Resource id="MyDataSource" type="DataSource">
+	<Resource id="MainDataSource" type="javax.sql.DataSource">
 		JdbcDriver org.hsqldb.jdbcDriver
-		JdbcUrl jdbc:hsqldb:file:data/maBase;shutdown=true;hsqldb.write_delay=false
+		JdbcUrl jdbc:hsqldb:file:data/database;shutdown=true;hsqldb.write_delay=false
 		UserName sa
 		Password
-		JtaManaged false
+		JtaManaged true
 	</Resource>
-
-	<Resource id="OtherDataSource" type="DataSource">
-		JdbcDriver org.hsqldb.jdbcDriver
-		JdbcUrl jdbc:hsqldb:file:data/other;shutdown=true;hsqldb.write_delay=false
-		UserName sa
-		Password
-		JtaManaged false
-	</Resource>
-
 </resources>
