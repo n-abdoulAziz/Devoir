@@ -1,6 +1,7 @@
 package gestioncv.entities;
 
 import java.io.Serializable;
+import java.util.Date;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -8,6 +9,8 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.NamedQuery;
 import javax.persistence.Table;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
 
 @Entity
 @Table(name = "Personne")
@@ -28,8 +31,9 @@ public class Person implements Serializable {
 	private String password;
 	@Column
 	private String website;
+	@Temporal(TemporalType.DATE)
 	@Column
-	private String birthday;
+	private Date birthday;
 
 	public Person() {
 		super();
@@ -83,12 +87,11 @@ public class Person implements Serializable {
 		this.website = website;
 	}
 
-	public String getBirthday() {
+	public Date getBirthday() {
 		return birthday;
 	}
 
-	public void setBirthday(String birthday) {
+	public void setBirthday(Date birthday) {
 		this.birthday = birthday;
 	}
-
 }
