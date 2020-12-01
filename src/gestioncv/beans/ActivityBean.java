@@ -10,18 +10,20 @@ import javax.persistence.PersistenceContext;
 
 import gestioncv.entities.Activity;
 
-@Stateless(name = "CurriculumVitaCVBean", description = "EJB pour accèder aux  cv")
+@Stateless(name = "ActivityBean", description = "EJB pour accéder aux activités")
 @TransactionManagement(TransactionManagementType.CONTAINER)
-public class ActivityBean {
-	@PersistenceContext(unitName = "MyDataSource")
+public class ActivityBean implements IActivityBean {
+	@PersistenceContext(unitName = "mainDatabase")
 	EntityManager em;
 
-	public Activity findCV(Long n) {
+	@Override
+	public Activity findActivity(Long n) {
 		return em.find(Activity.class, n);
 	}
 
-	public List<Activity> findAllCv() {	
-		return em.createQuery("Select cv From CurriculumVitae cv", Activity.class)
+	@Override
+	public List<Activity> findAllActivities() {	
+		return em.createQuery("Select a From Activity a", Activity.class)
 				.getResultList();
 	}
 }
