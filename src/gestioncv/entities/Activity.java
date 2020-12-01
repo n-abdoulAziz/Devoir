@@ -6,7 +6,6 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
-import javax.persistence.Lob;
 import javax.persistence.NamedQuery;
 import javax.persistence.Table;
 
@@ -20,24 +19,25 @@ public class Activity implements Serializable {
 	@Column(name = "id")
 	private Long id;
 	private String title;
-	@Lob
+
 	@Column
 	private Integer year;
-	@Lob
+
 	@Column
 	private String experiencePro;
-	@Lob
+
 	@Column
 	private String formation;
-	@Lob
+
 	@Column
 	private String project;
-	@Lob
+
 	@Column
 	private String other;
-	@Lob
+
 	@Column
 	private String description;
+	
 	@Column
 	private String adressweb;
 
