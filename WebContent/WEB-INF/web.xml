@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+	xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd"
+	version="4.0">
+	<display-name>Movies Application</display-name>
+	<description>Movies application</description>
+	<session-config>
+		<session-timeout>30</session-timeout>
+	</session-config>
+	<welcome-file-list>
+		<welcome-file>index.jsp</welcome-file>
+	</welcome-file-list>
+	<error-page>
+		<exception-type>java.lang.Exception</exception-type>
+		<location>/swa/error.jsp</location>
+	</error-page>
+	<jsp-config>
+		<jsp-property-group>
+			<description>Movies pages</description>
+			<url-pattern>/swa/*</url-pattern>
+			<page-encoding>UTF-8</page-encoding>
+			<include-prelude>/prelude.jsp</include-prelude>
+			<include-coda>/coda.jsp</include-coda>
+		</jsp-property-group>
+	</jsp-config>
+
+	<display-name>JSF Application</display-name>
+	<description>Exemple JSF</description>
+
+	<!-- Déclaration de la servlet genérique JSF -->
+	<servlet>
+		<servlet-name>Faces Servlet</servlet-name>
+		<servlet-class>javax.faces.webapp.FacesServlet</servlet-class>
+		<load-on-startup>1</load-on-startup>
+	</servlet>
+
+	<!-- URL traitées par cette servlet -->
+	<servlet-mapping>
+		<servlet-name>Faces Servlet</servlet-name>
+		<url-pattern>/faces/*</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>Faces Servlet</servlet-name>
+		<url-pattern>*.xhtml</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>Faces Servlet</servlet-name>
+		<url-pattern>*.jsf</url-pattern>
+	</servlet-mapping>
+
+	<!-- Paramétrage du projet -->
+	<context-param>
+		<param-name>javax.faces.PROJECT_STAGE</param-name>
+		<param-value>Development</param-value>
+		<!-- <param-value>Production</param-value> -->
+	</context-param><context-param>
+        <param-name>org.apache.myfaces.annotation.SCAN_PACKAGES</param-name>
+        <param-value>jsfapp</param-value>
+    </context-param>
+</web-app>
