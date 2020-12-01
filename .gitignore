@@ -12,3 +12,6 @@ target/
 
 # Faces
 .metadata/
+/bin/
+
+.factorypath
