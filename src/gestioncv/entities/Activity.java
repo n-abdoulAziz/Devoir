@@ -9,14 +9,15 @@ import javax.persistence.Id;
 import javax.persistence.Lob;
 import javax.persistence.NamedQuery;
 import javax.persistence.Table;
+
 @Entity
-@Table(name="Personne")
-@NamedQuery(name="trouver les activités",query="select cv from Activity cv")
-public class Activity implements Serializable{
+@Table(name = "Activity")
+@NamedQuery(name = "trouver les activités", query = "select a from Activity a")
+public class Activity implements Serializable {
 	private static final long serialVersionUID = 1L;
 	@Id
 	@GeneratedValue
-	@Column(name="id")
+	@Column(name = "id")
 	private Long id;
 	private String title;
 	@Lob
@@ -39,7 +40,7 @@ public class Activity implements Serializable{
 	private String description;
 	@Column
 	private String adressweb;
-	
+
 	public Long getId() {
 		return id;
 	}
@@ -116,6 +117,5 @@ public class Activity implements Serializable{
 		super();
 		// TODO Auto-generated constructor stub
 	}
-	
 
 }

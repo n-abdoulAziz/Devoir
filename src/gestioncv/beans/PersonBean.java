@@ -14,16 +14,16 @@ import gestioncv.entities.Person;
 @Stateless(name = "PersonBean", description = "EJB pour accèder aux  persones")
 @TransactionManagement(TransactionManagementType.CONTAINER)
 public class PersonBean {
-		@PersistenceContext(unitName = "MyDataSource")
-		private EntityManager em;
-		
-		public Person findPerson(long personId) {
-			return em.find(Person.class, personId);
-		}
-		
-		public List<Person>findAllPerson(){
-			return em.createQuery("Select p From Person p", Person.class)
-	                .getResultList();
-			
-		}
+	@PersistenceContext(unitName = "MyDataSource")
+	private EntityManager em;
+
+	public Person findPerson(long personId) {
+		return em.find(Person.class, personId);
 	}
+
+	public List<Person> findAllPerson() {
+		return em.createQuery("Select p From Person p", Person.class)
+				.getResultList();
+
+	}
+}
