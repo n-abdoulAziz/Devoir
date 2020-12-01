@@ -41,6 +41,10 @@ public class Activity implements Serializable {
 	@Column
 	private String adressweb;
 
+	public Activity() {
+		super();
+	}
+	
 	public Long getId() {
 		return id;
 	}
@@ -112,10 +116,4 @@ public class Activity implements Serializable {
 	public void setAdressweb(String adressweb) {
 		this.adressweb = adressweb;
 	}
-
-	public Activity() {
-		super();
-		// TODO Auto-generated constructor stub
-	}
-
 }

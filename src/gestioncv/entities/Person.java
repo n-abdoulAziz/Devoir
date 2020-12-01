@@ -33,7 +33,6 @@ public class Person implements Serializable {
 
 	public Person() {
 		super();
-		// TODO Auto-generated constructor stub
 	}
 
 	public Long getId() {

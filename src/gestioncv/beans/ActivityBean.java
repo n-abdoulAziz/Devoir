@@ -20,8 +20,7 @@ public class ActivityBean {
 		return em.find(Activity.class, n);
 	}
 
-	public List<Activity> findAllCv() {
-		// TODO Auto-generated method stub
+	public List<Activity> findAllCv() {	
 		return em.createQuery("Select cv From CurriculumVitae cv", Activity.class)
 				.getResultList();
 	}
